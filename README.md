@@ -1,0 +1,1 @@
+# JKITs25-bash-terentjev

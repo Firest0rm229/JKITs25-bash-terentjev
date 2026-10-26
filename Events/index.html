@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sündmused JavaScriptis</title>
+    <!-- RU: defer запускает код после чтения HTML, но до DOMContentLoaded.
+         ET: defer käivitab koodi pärast HTML-i lugemist, kuid enne DOMContentLoaded-sündmust. -->
+    <link rel="stylesheet" href="style.css">
+    <script src="events.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Sündmused JavaScriptis</h1>
+        <p>Proovi iga näidet ja loe seejärel faili <code>events.js</code> vastavat osa.</p>
+        <p id="page-status" role="status">Leht laadib…</p>
+
+        <!-- RU: Номера разделов совпадают с номерами примеров в events.js.
+             ET: Jaotiste numbrid vastavad faili events.js näidete numbritele. -->
+        <section>
+            <h2>1. Klõps ja sündmuse objekt</h2>
+            <p>Klõpsa nupul või selle sees oleval sõnal. Võrdle sündmuse sihte.</p>
+            <button id="click-button" type="button">Klõpsa <span>siin</span></button>
+            <p id="click-result" role="status">Klõpse: 0</p>
+            <p id="target-result">Sündmuse andmed ilmuvad siia.</p>
+        </section>
+
+        <section>
+            <h2>2. Topeltklõps</h2>
+            <button id="double-button" type="button">Tee topeltklõps</button>
+            <p id="double-result" role="status">Topeltklõpsu pole veel tehtud.</p>
+        </section>
+
+        <section>
+            <h2>3. Hiirega alale liikumine ja alalt lahkumine</h2>
+            <p>Liiguta hiirekursor sinisele alale ja seejärel sealt välja. See näide vajab hiirt või puuteplaati.</p>
+            <div id="mouse-area" class="mouse-area">Liiguta kursor siia</div>
+            <p id="mouse-result" role="status">Kursor on alast väljas.</p>
+        </section>
+
+        <section>
+            <h2>4. Teksti sisestamine</h2>
+            <label for="text-input">Kirjuta midagi</label>
+            <input id="text-input" type="text" maxlength="100">
+            <p id="input-result" role="status">Tekst: (tühi). Pikkus: 0</p>
+        </section>
+
+        <section>
+            <h2>5. Valiku muutmine</h2>
+            <label for="color-select">Vali tausta värv</label>
+            <select id="color-select">
+                <option value="blue">Sinine</option>
+                <option value="green">Roheline</option>
+            </select>
+            <p id="color-preview" class="blue" role="status">Valitud värv: sinine</p>
+        </section>
+
+        <section>
+            <h2>6. Fookus</h2>
+            <p>Klõpsa väljal või liigu sellele Tab-klahviga. Seejärel liigu mujale.</p>
+            <label for="focus-input">Harjutusväli</label>
+            <input id="focus-input" type="text">
+            <p id="focus-result" role="status">Väli ei ole fookuses.</p>
+        </section>
+
+        <section>
+            <h2>7. Klahvi vajutamine ja vabastamine</h2>
+            <p>Kirjuta väljale. Escape-klahv tühjendab välja.</p>
+            <label for="key-input">Klaviatuuri harjutusväli</label>
+            <input id="key-input" type="text">
+            <p id="keydown-result">Vajutatud klahv: —</p>
+            <p id="keyup-result">Vabastatud klahv: —</p>
+        </section>
+
+        <section>
+            <h2>8–9. Vormi saatmine ja lähtestamine</h2>
+            <p>Sisesta nimi ja saada vorm nupu või Enter-klahviga.</p>
+            <!-- RU: novalidate позволяет показать собственную проверку в JS.
+                 ET: novalidate võimaldab näidata JavaScriptis kirjutatud kontrolli tulemust. -->
+            <form id="name-form" novalidate>
+                <label for="name-input">Sinu nimi</label>
+                <input id="name-input" name="name" type="text" maxlength="40" required>
+                <button type="submit">Saada</button>
+                <button type="reset">Lähtesta</button>
+            </form>
+            <p id="form-result" role="status">Vormi pole veel saadetud.</p>
+        </section>
+
+        <section>
+            <h2>10. Sündmuse kuulamise lõpetamine ja jätkamine</h2>
+            <button id="counter-button" type="button">Lisa punkt</button>
+            <button id="stop-button" type="button">Lõpeta kuulamine</button>
+            <button id="start-button" type="button" disabled>Jätka kuulamist</button>
+            <p id="counter-result" role="status">Punkte: 0</p>
+            <p id="listener-result" role="status">Klõpsude kuulamine on sisse lülitatud.</p>
+        </section>
+
+        <section>
+            <h2>11. Akna suuruse muutmine</h2>
+            <p>Muuda brauseriakna laiust ja jälgi arvu.</p>
+            <p id="size-result" role="status"></p>
+        </section>
+
+        <p><a href="../examples/index.html">Proovi õpitud sündmusi ka mängudes</a></p>
+    </main>
+</body>
+</html>
